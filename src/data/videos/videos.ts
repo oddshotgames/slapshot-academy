@@ -57,6 +57,14 @@ const videos = [
 		source: 'https://youtu.be/Cf4Sc5QKS7A',
 		duration: 568,
 		tags: [tags.ADVANCED],
+	},
+	{
+		title: 'Slapshot: Rebound Beginners Guide',
+		author: 'Re1gn',
+		source: 'https://youtu.be/TtBMxEN5Hks',
+		duration: 435,
+		tags: [tags.BEGINNER, tags.OVERVIEW],
+
 	}
 ] as Video[];
 

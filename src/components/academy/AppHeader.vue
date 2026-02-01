@@ -15,10 +15,10 @@ const route = useRoute()
 </script>
 
 <template>
-	<header class="bg-background sticky top-0 z-50 flex w-full items-center border-b">
+	<header class="header-gradient sticky top-0 z-50 flex w-full items-center">
 		<div class="flex h-(--header-height) w-full items-center gap-2 px-4">
 			<RouterLink to="/">
-				<Button variant="ghost" class="px-8 cursor-pointer">
+				<Button variant="ghost" class="px-8 cursor-pointer nav-button">
 					<img src="/trainer-buddy.png" alt="Slapshot Academy" class="h-6 w-auto" />
 					<span class="font-bold">Slapshot Academy</span>
 				</Button>
@@ -29,25 +29,25 @@ const route = useRoute()
 				<NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()"
+							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()" class="nav-button"
 								:active="route.path.startsWith('/concepts')">
 								<RouterLink to="/concepts">Game Concepts</RouterLink>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()"
+							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()" class="nav-button"
 								:active="route.path.startsWith('/guides')">
 								<RouterLink to="/guides">Guides</RouterLink>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()"
+							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()" class="nav-button"
 								:active="route.path.startsWith('/esports')">
 								<RouterLink to="/esports">Esports</RouterLink>
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()"
+							<NavigationMenuLink as-child :class="navigationMenuTriggerStyle()" class="nav-button"
 								:active="route.path.startsWith('/communities')">
 								<RouterLink to="/communities">Communities</RouterLink>
 							</NavigationMenuLink>
@@ -58,3 +58,21 @@ const route = useRoute()
 		</div>
 	</header>
 </template>
+
+<style scoped>
+.header-gradient {
+	background: linear-gradient(to top, var(--primary), var(--primary-to));
+}
+
+.nav-button {
+	background-color: transparent;
+}
+
+.nav-button:hover {
+	background-color: #ffffff17;
+}
+
+.nav-button.router-link-exact-active {
+	background-color: #ffffff2d;
+}
+</style>

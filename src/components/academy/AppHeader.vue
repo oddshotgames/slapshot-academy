@@ -72,7 +72,7 @@ const route = useRoute()
 	background-color: #ffffff17;
 }
 
-.nav-button.router-link-exact-active {
+.nav-button.router-link-active {
 	background-color: #ffffff2d;
 }
 </style>

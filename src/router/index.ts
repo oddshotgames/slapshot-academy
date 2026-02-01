@@ -9,14 +9,28 @@ const router = createRouter({
 			component: () => import('../views/HomeView.vue')
 		},
 		{
-			path: '/esports',
-			name: 'esports',
-			component: () => import('../views/EsportsView.vue')
-		},
-		{
-			path: '/communities',
-			name: 'communities',
-			component: () => import('../views/CommunitiesView.vue')
+			path: '/concepts',
+			name: 'concepts',
+			component: () => import('../views/ConceptsView.vue'),
+			redirect: '/concepts/intro',
+			children: [
+				{
+					path: 'intro',
+					name: 'concepts-intro',
+					component: () => import('../views/concepts/SlapshotIntro.vue'),
+					meta: {
+						title: 'Introduction to Slapshot'
+					}
+				},
+				{
+					path: 'formats',
+					name: 'formats',
+					component: () => import('../views/concepts/FormatsConcept.vue'),
+					meta: {
+						title: 'Formats'
+					}
+				},
+			],
 		},
 		{
 			path: '/guides',
@@ -24,11 +38,42 @@ const router = createRouter({
 			component: () => import('../views/GuidesView.vue')
 		},
 		{
-			path: '/concepts',
-			name: 'concepts',
-			component: () => import('../views/ConceptsView.vue')
-		}
+			path: '/esports',
+			name: 'esports',
+			component: () => import('../views/EsportsView.vue'),
+			redirect: '/esports/intro',
+			children: [
+				{
+					path: 'intro',
+					name: 'esports-intro',
+					component: () => import('../views/esports/EsportsIntro.vue'),
+					meta: {
+						title: 'Esports in Slapshot'
+					}
+				},
+				{
+					path: 'regions',
+					name: 'regions',
+					component: () => import('../views/esports/EsportsRegions.vue'),
+					meta: {
+						title: 'Regions'
+					}
+				},
+			],
+		},
+		{
+			path: '/communities',
+			name: 'communities',
+			component: () => import('../views/CommunitiesView.vue'),
+		},
 	],
 })
 
+interface Route {
+	title: string
+	url: string
+	key: string
+}
+
+export type { Route }
 export default router

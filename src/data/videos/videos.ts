@@ -64,8 +64,14 @@ const videos = [
 		source: 'https://youtu.be/TtBMxEN5Hks',
 		duration: 435,
 		tags: [tags.BEGINNER, tags.OVERVIEW],
-
-	}
+	},
+	{
+		title: 'How to become a great goalie',
+		author: 'SpookyIsMyName',
+		source: 'https://youtu.be/3s-hSDtU5AQ',
+		duration: 380,
+		tags: [tags.ADVANCED],
+	},
 ] as Video[];
 
 export type { Video };
